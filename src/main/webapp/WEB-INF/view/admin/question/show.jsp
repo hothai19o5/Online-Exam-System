@@ -24,6 +24,8 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -55,7 +57,115 @@
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Exam Name</th>
+                                            <th>Question</th>
+                                            <th>Option 1</th>
+                                            <th>Option 2</th>
+                                            <th>Option 3</th>
+                                            <th>Option 4</th>
+                                            <th>Answer</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Exam Name</th>
+                                            <th>Question</th>
+                                            <th>Option 1</th>
+                                            <th>Option 2</th>
+                                            <th>Option 3</th>
+                                            <th>Option 4</th>
+                                            <th>Answer</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Java</td>
+                                            <td>What is the purpose of the "super" keyword in Java?</td>
+                                            <td>To refer to the current object</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>To create multiple instances of a class</td>
+                                            <td>To hide data and methods within a class</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>
+                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Java</td>
+                                            <td>What is the difference between a class and an object in Java?</td>
+                                            <td>A class is a blueprint for creating objects, while an object is an instance of a class.</td>
+                                            <td>A class is a single entity, while an object is a collection of entities.</td>
+                                            <td>A class contains data and methods, while an object only contains data.</td>
+                                            <td>A class cannot be instantiated, while an object can be created and used.</td>
+                                            <td>A class is a blueprint for creating objects, while an object is an instance of a class.</td>
+                                            <td>
+                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Java</td>
+                                            <td>What is the purpose of the "super" keyword in Java?</td>
+                                            <td>To refer to the current object</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>To create multiple instances of a class</td>
+                                            <td>To hide data and methods within a class</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>
+                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Java</td>
+                                            <td>What is the purpose of the "super" keyword in Java?</td>
+                                            <td>To refer to the current object</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>To create multiple instances of a class</td>
+                                            <td>To hide data and methods within a class</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>
+                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Java</td>
+                                            <td>What is the purpose of the "super" keyword in Java?</td>
+                                            <td>To refer to the current object</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>To create multiple instances of a class</td>
+                                            <td>To hide data and methods within a class</td>
+                                            <td>To invoke the superclass constructor or methods</td>
+                                            <td>
+                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -90,6 +200,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 

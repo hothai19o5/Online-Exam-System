@@ -24,6 +24,8 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -55,7 +57,57 @@
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Duration</th>
+                                            <th>Total Question</th>
+                                            <th>Exam Description</th>
+                                            <th>Mark Wrong</th>
+                                            <th>Mark Right</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Duration</th>
+                                            <th>Total Question</th>
+                                            <th>Exam Description</th>
+                                            <th>Mark Wrong</th>
+                                            <th>Mark Right</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Java</td>
+                                            <td>60 min</td>
+                                            <td>40</td>
+                                            <td>Java</td>
+                                            <td>-0.25</td>
+                                            <td>1</td>
+                                            <td>
+                                                <a href="/admin/exam/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/exam/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/exam/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -97,6 +149,13 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 

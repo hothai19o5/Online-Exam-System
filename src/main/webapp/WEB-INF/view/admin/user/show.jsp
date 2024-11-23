@@ -24,6 +24,8 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -55,8 +57,99 @@
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-
-
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>FullName</th>
+                                            <th>Email</th>
+                                            <th>Age</th>
+                                            <th>Phone Number</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>FullName</th>
+                                            <th>Email</th>
+                                            <th>Age</th>
+                                            <th>Phone Number</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Hồ Xuân Thái</td>
+                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
+                                            <td>20</td>
+                                            <td>0399549318</td>
+                                            <td>
+                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Hồ Xuân Thái</td>
+                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
+                                            <td>20</td>
+                                            <td>0399549318</td>
+                                            <td>
+                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Hồ Xuân Thái</td>
+                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
+                                            <td>20</td>
+                                            <td>0399549318</td>
+                                            <td>
+                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Hồ Xuân Thái</td>
+                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
+                                            <td>20</td>
+                                            <td>0399549318</td>
+                                            <td>
+                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Hồ Xuân Thái</td>
+                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
+                                            <td>20</td>
+                                            <td>0399549318</td>
+                                            <td>
+                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
+                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
+                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -91,6 +184,12 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

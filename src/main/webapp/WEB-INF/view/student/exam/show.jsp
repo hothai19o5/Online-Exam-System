@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Student</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,13 +50,66 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Results</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800">Exams</h1>
                     </div>
 
+                    <!-- Content Section -->
+                    <div class="mt-4">
+                        <!-- Pending Exam -->
+                        <h4>Pending Exam</h4>
 
+                        <div class="card mb-3 bg-warning text-white shadow">
+                            <div class="card-body">
+                                <h6>Exam Name: Java</h6>
+                                <p>Description: Java Exam</p>
+                                <div class="d-flex justify-content-between">
+                                    <span>Question: 10</span>
+                                    <span>Time: 10 Minute</span>
+                                    <span>Marks: 40</span>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
+
+                        <!-- Completed Exam -->
+                        <h4>Completed Exam</h4>
+
+                        <div class="card mb-3 bg-success text-white shadow">
+                            <div class="card-body">
+                                <h6>Exam Name: Java</h6>
+                                <p>Description: Java Exam</p>
+                                <div class="d-flex justify-content-between">
+                                    <span>Question: 10</span>
+                                    <span>Time: 10 Minute</span>
+                                    <span>Marks: 40</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
+
+                        <!-- All Exam -->
+                        <h4>All Exam</h4>
+
+                        <div class="card mb-3 bg-info text-white shadow">
+                            <div class="card-body">
+                                <h6>Exam Name: Java</h6>
+                                <p>Description: Java Exam</p>
+                                <div class="d-flex justify-content-between">
+                                    <span>Question: 10</span>
+                                    <span>Time: 10 Minute</span>
+                                    <span>Marks: 40</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
+
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
