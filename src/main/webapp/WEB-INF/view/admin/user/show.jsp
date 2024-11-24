@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -69,7 +69,6 @@
                                             <th>ID</th>
                                             <th>FullName</th>
                                             <th>Email</th>
-                                            <th>Age</th>
                                             <th>Phone Number</th>
                                             <th>Action</th>
                                         </tr>
@@ -79,72 +78,24 @@
                                             <th>ID</th>
                                             <th>FullName</th>
                                             <th>Email</th>
-                                            <th>Age</th>
                                             <th>Phone Number</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Hồ Xuân Thái</td>
-                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
-                                            <td>20</td>
-                                            <td>0399549318</td>
-                                            <td>
-                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Hồ Xuân Thái</td>
-                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
-                                            <td>20</td>
-                                            <td>0399549318</td>
-                                            <td>
-                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Hồ Xuân Thái</td>
-                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
-                                            <td>20</td>
-                                            <td>0399549318</td>
-                                            <td>
-                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Hồ Xuân Thái</td>
-                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
-                                            <td>20</td>
-                                            <td>0399549318</td>
-                                            <td>
-                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Hồ Xuân Thái</td>
-                                            <td>Thai.HX225393@sis.hust.edu.vn</td>
-                                            <td>20</td>
-                                            <td>0399549318</td>
-                                            <td>
-                                                <a href="/admin/user/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/user/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/user/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <c:forEach var="user" items="${users}">
+                                            <tr>
+                                                <td>${user.id}</td>
+                                                <td>${user.username}</td>
+                                                <td>${user.email}</td>
+                                                <td>${user.phone}</td>
+                                                <td>
+                                                    <a href="/admin/user/${user.id}" class="btn btn-info">Detail</a>
+                                                    <a href="/admin/user/update/${user.id}" class="btn btn-primary">Edit</a>
+                                                    <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

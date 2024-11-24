@@ -13,16 +13,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <jsp:include page="layout/sidebar.jsp" />
+        <jsp:include page="../layout/sidebar.jsp" />
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -42,7 +42,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <jsp:include page="layout/topbar.jsp" />
+                <jsp:include page="../layout/topbar.jsp" />
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -50,13 +50,49 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Students</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Student Infomation</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-
-
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Student Infomation</h6>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Student Id:</th>
+                                        <td>${user.id}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Full Name:</th>
+                                        <td>${user.username}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email:</th>
+                                        <td>${user.email}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone:</th>
+                                        <td>${user.phone}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Password:</th>
+                                        <td>${user.password}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Avatar:</th>
+                                        <td>
+                                            <img style="max-height: 500px; max-width: 100%; object-fit: contain;"
+                                                src="/img/avatar/${user.avatar}" alt="image avatar">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -64,7 +100,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <jsp:include page="layout/footer.jsp" />
+            <jsp:include page="../layout/footer.jsp" />
             <!-- End of Footer -->
 
         </div>
@@ -79,24 +115,17 @@
     </a>
 
     <!-- Logout Modal-->
-    <jsp:include page="layout/logoutModal.jsp" />
+    <jsp:include page="../layout/logoutModal.jsp" />
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
 </body>
 

@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,8 +53,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Questions</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="/admin/question/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-download fa-sm text-white-50"></i> Add New Question</a>
                     </div>
 
                     <div class="card shadow mb-4">
@@ -67,7 +67,6 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Exam Name</th>
                                             <th>Question</th>
                                             <th>Option 1</th>
                                             <th>Option 2</th>
@@ -80,7 +79,6 @@
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Exam Name</th>
                                             <th>Question</th>
                                             <th>Option 1</th>
                                             <th>Option 2</th>
@@ -91,76 +89,21 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Java</td>
-                                            <td>What is the purpose of the "super" keyword in Java?</td>
-                                            <td>To refer to the current object</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>To create multiple instances of a class</td>
-                                            <td>To hide data and methods within a class</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>
-                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Java</td>
-                                            <td>What is the difference between a class and an object in Java?</td>
-                                            <td>A class is a blueprint for creating objects, while an object is an instance of a class.</td>
-                                            <td>A class is a single entity, while an object is a collection of entities.</td>
-                                            <td>A class contains data and methods, while an object only contains data.</td>
-                                            <td>A class cannot be instantiated, while an object can be created and used.</td>
-                                            <td>A class is a blueprint for creating objects, while an object is an instance of a class.</td>
-                                            <td>
-                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Java</td>
-                                            <td>What is the purpose of the "super" keyword in Java?</td>
-                                            <td>To refer to the current object</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>To create multiple instances of a class</td>
-                                            <td>To hide data and methods within a class</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>
-                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Java</td>
-                                            <td>What is the purpose of the "super" keyword in Java?</td>
-                                            <td>To refer to the current object</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>To create multiple instances of a class</td>
-                                            <td>To hide data and methods within a class</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>
-                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Java</td>
-                                            <td>What is the purpose of the "super" keyword in Java?</td>
-                                            <td>To refer to the current object</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>To create multiple instances of a class</td>
-                                            <td>To hide data and methods within a class</td>
-                                            <td>To invoke the superclass constructor or methods</td>
-                                            <td>
-                                                <a href="/admin/question/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/question/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <c:forEach var="question" items="${questions}">
+                                            <tr>
+                                                <td>${question.id}</td>
+                                                <td>${question.questionDesc}</td>
+                                                <td>${question.option1}</td>
+                                                <td>${question.option2}</td>
+                                                <td>${question.option3}</td>
+                                                <td>${question.option4}</td>
+                                                <td>${question.answer}</td>
+                                                <td>
+                                                    <a href="/admin/question/update/${question.id}" class="btn btn-primary">Edit</a>
+                                                    <a href="/admin/question/delete/${question.id}" class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

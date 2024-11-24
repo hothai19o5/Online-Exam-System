@@ -19,4 +19,16 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return this.questionRepository.findAll();
     }
+
+    public Question getQuestionById(int id) {
+        return this.questionRepository.findById(id).orElse(null);
+    }
+
+    public void saveQuestion(Question question) {
+        this.questionRepository.save(question);
+    }
+
+    public void deleteQuestion(int id) {
+        this.questionRepository.deleteById(id);
+    }
 }
