@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,8 +53,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Exams</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="/admin/exam/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> New Exam</a>
                     </div>
 
                     <div class="card shadow mb-4">
@@ -89,20 +89,22 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Java</td>
-                                            <td>60 min</td>
-                                            <td>40</td>
-                                            <td>Java</td>
-                                            <td>-0.25</td>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="/admin/exam/detail" class="btn btn-info">Detail</a>
-                                                <a href="/admin/exam/edit" class="btn btn-primary">Edit</a>
-                                                <a href="/admin/exam/delete" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <c:forEach var="exam" items="${exams}">
+                                            <tr>
+                                                <td>${exam.id}</td>
+                                                <td>${exam.title}</td>
+                                                <td>${exam.duration}</td>
+                                                <td>${exam.totalQuestion}</td>
+                                                <td>${exam.examDesc}</td>
+                                                <td>${exam.markWrong}</td>
+                                                <td>${exam.markRight}</td>
+                                                <td>
+                                                    <a href="/admin/exam/${exam.id}" class="btn btn-info">Detail</a>
+                                                    <a href="/admin/exam/update/${exam.id}" class="btn btn-primary">Add Question</a>
+                                                    <a href="/admin/exam/delete/${exam.id}" class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

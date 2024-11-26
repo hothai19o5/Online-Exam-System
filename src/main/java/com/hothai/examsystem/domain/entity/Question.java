@@ -113,7 +113,6 @@ public class Question {
     @Override
     public String toString() {
         return "Question [id=" + id + ", questionDesc=" + questionDesc + ", option1=" + option1 + ", option2=" + option2
-                + ", option3=" + option3 + ", option4=" + option4 + ", answer=" + answer + ", exams=" + exams
-                + ", answers=" + answers + "]";
+                + ", option3=" + option3 + ", option4=" + option4 + ", answer=" + answer + ", answers=" + answers + "]";
     }
 }

@@ -1,5 +1,6 @@
 package com.hothai.examsystem.domain.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -50,7 +51,7 @@ public class Exam {
     @JoinTable(name = "exam_question",
         joinColumns ={ @JoinColumn(name = "exam_id")},
         inverseJoinColumns ={ @JoinColumn(name = "question_id")})
-    private Set<Question> questions;
+    private List<Question> questions;
 
     public int getId() {
         return id;
@@ -106,16 +107,16 @@ public class Exam {
     public void setAnswers(Set<Answer> answers) {
         this.answers = answers;
     }
-    public Set<Question> getQuestions() {
-        return questions;
+    public List<Question> getQuestions() {
+        return this.questions;
     }
-    public void setQuestions(Set<Question> questions) {
+    public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
     @Override
     public String toString() {
         return "Exam [id=" + id + ", title=" + title + ", duration=" + duration + ", totalQuestion=" + totalQuestion
                 + ", examDesc=" + examDesc + ", markWrong=" + markWrong + ", markRight=" + markRight + ", results="
-                + results + ", answers=" + answers + ", questions=" + questions + "]";
+                + results + ", answers=" + answers + "]";
     }
 }

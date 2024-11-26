@@ -10,18 +10,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hothai.examsystem.domain.entity.Exam;
+import com.hothai.examsystem.domain.entity.Question;
 import com.hothai.examsystem.service.ExamService;
+import com.hothai.examsystem.service.QuestionService;
 
 import jakarta.validation.Valid;
 
 @Controller
 public class ExamController {
     private final ExamService examService;
+    private final QuestionService questionService;
 
-    public ExamController(ExamService examService) {
+    public ExamController(ExamService examService, QuestionService questionService) {
         this.examService = examService;
+        this.questionService = questionService;
     }
 
     @GetMapping("/admin/exam")
@@ -40,32 +45,21 @@ public class ExamController {
     }
 
     @RequestMapping("/admin/exam/update/{id}")
-    public String getUpdateUserPage(Model model, @PathVariable long id) {
+    public String getAddQuestionPage(Model model, @PathVariable long id) {
         model.addAttribute("id", id);
         Exam exam = this.examService.getExamById(id);
         model.addAttribute("exam", exam);
+        List<Question> questions = this.questionService.getAllQuestions();
+        model.addAttribute("questions", questions);
         return "admin/exam/update";
     }
 
     @PostMapping("/admin/exam/update")
-    public String postUpdateUser(Model model, @ModelAttribute("exam") @Valid Exam dataForm,
-            BindingResult userBindingResult) {
-
-        if (userBindingResult.hasErrors()) {
-            return "/admin/exam/update";
-        }
-
-        Exam currentExam = this.examService.getExamById(dataForm.getId());
-        if (currentExam != null) {
-            currentExam.setTitle(dataForm.getTitle());
-            currentExam.setTotalQuestion(dataForm.getTotalQuestion());
-            currentExam.setDuration(dataForm.getDuration());
-            currentExam.setExamDesc(dataForm.getExamDesc());
-            currentExam.setMarkRight(dataForm.getMarkRight());
-            currentExam.setMarkWrong(dataForm.getMarkWrong());
-            currentExam.setQuestions(dataForm.getQuestions());
-            this.examService.handleSaveExam(currentExam);
-        }
+    public String postUpdateUser(Model model, @RequestParam("questionIds") List<Integer> questionIds, @RequestParam("examId") int examId) {
+         // Log dữ liệu nhận được
+         System.out.println("Exam ID: " + examId);
+         System.out.println("Selected Questions: " + questionIds);
+         this.examService.addQuestionToExam(examId, questionIds);
         return "redirect:/admin/exam";
     }
 
