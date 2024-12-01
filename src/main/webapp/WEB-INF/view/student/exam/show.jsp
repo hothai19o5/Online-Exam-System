@@ -55,26 +55,10 @@
 
                     <!-- Content Section -->
                     <div class="mt-4">
-                        <!-- Pending Exam -->
-                        <h4>Pending Exam</h4>
-
-                        <div class="card mb-3 bg-warning text-white shadow">
-                            <div class="card-body">
-                                <h6>Exam Name: Java</h6>
-                                <p>Description: Java Exam</p>
-                                <div class="d-flex justify-content-between">
-                                    <span>Question: 10</span>
-                                    <span>Time: 10 Minute</span>
-                                    <span>Marks: 40</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider">
 
                         <!-- Completed Exam -->
                         <h4>Completed Exam</h4>
+
 
                         <div class="card mb-3 bg-success text-white shadow">
                             <div class="card-body">

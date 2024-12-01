@@ -51,35 +51,40 @@
                     <div class="row">
                         <!-- Left Section: Questions -->
                         <div class="col-lg-9">
-                            <c:forEach var="question" items="${questions}">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Q ${question.id}. ${question.questionDesc}</h5>
-                                        <form>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="q8" id="q8Option1" value="package">
-                                                <label class="form-check-label" for="q8Option1">${question.option1}</label>
+                            <form:form action="/student/exam/submit" method="post">
+                                <c:forEach var="question" items="${questions}">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Question ${question.id}. ${question.questionDesc}</h5>
+                                            <div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="${question.id}"
+                                                            id="answer[${question.id}]Option1" value="A" required>
+                                                    <label class="form-check-label" for="answer[${question.id}]Option1">${question.option1}</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="${question.id}"
+                                                            id="answer[${question.id}]Option2" value="B" required>
+                                                    <label class="form-check-label" for="answer[${question.id}]Option2">${question.option2}</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="${question.id}"
+                                                            id="answer[${question.id}]Option3" value="C" required>
+                                                    <label class="form-check-label" for="answer[${question.id}]Option3">${question.option3}</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="${question.id}"
+                                                            id="answer[${question.id}]Option4" value="D" required>
+                                                    <label class="form-check-label" for="answer[${question.id}]Option4">${question.option4}</label>
+                                                </div>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="q8" id="q8Option2" value="import">
-                                                <label class="form-check-label" for="q8Option2">${question.option2}</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="q8" id="q8Option3" value="extends">
-                                                <label class="form-check-label" for="q8Option3">${question.option3}</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="q8" id="q8Option4" value="export">
-                                                <label class="form-check-label" for="q8Option4">${question.option4}</label>
-                                            </div>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </c:forEach>
+                                </c:forEach>
 
-
-                            <!-- Submit Button -->
-                            <button class="btn btn-primary w-100">Submit Exam</button>
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary w-100">Submit Exam</button>
+                            </form:form>
                         </div>
 
                         <!-- Right Section: Timer and Details -->
@@ -88,7 +93,7 @@
                                 <div class="card-body">
                                     <h6>Time Left : <span class="text-danger">9:29</span></h6>
                                     <ul class="list-unstyled mt-3">
-                                        <li><strong>Name:</strong> Student Name</li>
+                                        <li><strong>Name:</strong> ${sessionScope.userName}</li>
                                         <li><strong>Exam Name:</strong> ${exam.title}</li>
                                         <li><strong>Total Questions:</strong> ${exam.totalQuestion}</li>
                                         <li><strong>Total Marks:</strong> 40</li>

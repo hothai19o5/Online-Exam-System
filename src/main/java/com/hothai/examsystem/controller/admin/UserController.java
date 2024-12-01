@@ -24,15 +24,17 @@ import jakarta.validation.Valid;
 public class UserController {
     private final UserService userService;
     private final UploadService uploadService;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserService userService, UploadService uploadService) {
+    public UserController(UserService userService, UploadService uploadService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.uploadService = uploadService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/admin/user")
     public String getUserPage(Model model) {
-        List<User> users = this.userService.getAllUser();
+        List<User> users = this.userService.getAllUserByRole("STUDENT");
         model.addAttribute("users", users);
         return "admin/user/show";
     }
@@ -89,7 +91,8 @@ public class UserController {
         String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
         dataForm.setAvatar(avatar);
         dataForm.setRole(this.userService.getRoleByName(dataForm.getRole().getName()));
-        dataForm.setPassword(dataForm.getPassword());
+        String hashPassword = this.passwordEncoder.encode(dataForm.getPassword());
+        dataForm.setPassword(hashPassword);
         this.userService.handleSaveUser(dataForm);
         return "redirect:/admin/user";
     }

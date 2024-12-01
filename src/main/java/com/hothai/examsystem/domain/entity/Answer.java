@@ -20,7 +20,7 @@ public class Answer {
     private String option_value;
 
     @NotNull
-    private String mark;
+    private int mark;
 
     @ManyToOne
     @JoinColumn(name="question_id")
@@ -46,10 +46,10 @@ public class Answer {
     public void setOption_value(String option_value) {
         this.option_value = option_value;
     }
-    public String getMark() {
+    public int getMark() {
         return mark;
     }
-    public void setMark(String mark) {
+    public void setMark(int mark) {
         this.mark = mark;
     }
     public Question getQuestion() {

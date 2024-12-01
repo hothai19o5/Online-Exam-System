@@ -9,40 +9,47 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "EnrollTable")
-public class Enroll {
+@Table(name = "user_batch_table")
+public class UserBatch {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name="batch_id")
-    private Batch batch;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "exam_id")
-    private Exam exam;
+    @JoinColumn(name = "batch_id")
+    private Batch batch;
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Batch getBatch() {
         return batch;
     }
+
     public void setBatch(Batch batch) {
         this.batch = batch;
     }
-    public Exam getExam() {
-        return exam;
-    }
-    public void setExam(Exam exam) {
-        this.exam = exam;
-    }
+
     @Override
     public String toString() {
-        return "Enroll [id=" + id + ", batch=" + batch + ", exam=" + exam + "]";
+        return "UserBatch [id=" + id + ", user=" + user + ", batch=" + batch + "]";
     }
 }

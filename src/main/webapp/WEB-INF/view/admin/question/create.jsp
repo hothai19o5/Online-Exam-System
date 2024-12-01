@@ -58,18 +58,23 @@
                     <div class="mt-5">
                         <div class="row">
                             <div class="col-md-6 col-12 mx-auto">
-                                <h3>Update a question</h3>
+                                <h3>Create a question</h3>
                                 <hr />
-                                <form:form action="/admin/question/create" method="post" modelAttribute="newQuestion"
-                                    enctype="multipart/form-data">
+                                <form:form action="/admin/question/create" method="post" modelAttribute="newQuestion" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <c:set var="errorTitle">
+                                            <form:errors path="title" cssClass="invalid-feedback" />
+                                        </c:set>
+                                        <label class="form-label">Question Title:</label>
+                                        <form:input type="text" class="form-control ${not empty errorTitle ? 'is-invalid' : ''}" path="title" />
+                                        ${errorTitle}
+                                    </div>
                                     <div class="mb-3">
                                         <c:set var="errorQuestion">
                                             <form:errors path="questionDesc" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Question Description:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorQuestion ? 'is-invalid' : ''}"
-                                            path="questionDesc" />
+                                        <form:input type="text" class="form-control ${not empty errorQuestion ? 'is-invalid' : ''}" path="questionDesc" />
                                         ${errorQuestion}
                                     </div>
                                     <div class="mb-3">
@@ -77,9 +82,7 @@
                                             <form:errors path="option1" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Option 1:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorOption1 ? 'is-invalid' : ''}"
-                                            path="option1" />
+                                        <form:input type="text" class="form-control ${not empty errorOption1 ? 'is-invalid' : ''}" path="option1" />
                                         ${errorOption1}
                                     </div>
                                     <div class="mb-3">
@@ -87,9 +90,7 @@
                                             <form:errors path="option2" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Option 2:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorOption2 ? 'is-invalid' : ''}"
-                                            path="option2" />
+                                        <form:input type="text" class="form-control ${not empty errorOption2 ? 'is-invalid' : ''}" path="option2" />
                                         ${errorOption2}
                                     </div>
                                     <div class="mb-3">
@@ -97,9 +98,7 @@
                                             <form:errors path="option3" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Option 3:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorOption3 ? 'is-invalid' : ''}"
-                                            path="option3" />
+                                        <form:input type="text" class="form-control ${not empty errorOption3 ? 'is-invalid' : ''}" path="option3" />
                                         ${errorOption3}
                                     </div>
                                     <div class="mb-3">
@@ -107,9 +106,7 @@
                                             <form:errors path="option4" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Option 4:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorOption4 ? 'is-invalid' : ''}"
-                                            path="option4" />
+                                        <form:input type="text" class="form-control ${not empty errorOption4 ? 'is-invalid' : ''}" path="option4" />
                                         ${errorOption4}
                                     </div>
                                     <div class="mb-3">
@@ -117,9 +114,22 @@
                                             <form:errors path="answer" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Answer:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorAnswer ? 'is-invalid' : ''}"
-                                            path="answer" />
+                                        <div>
+                                            <form:radiobutton path="answer" value="A" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
+                                            <label>A</label>
+                                        </div>
+                                        <div>
+                                            <form:radiobutton path="answer" value="B" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
+                                            <label>B</label>
+                                        </div>
+                                        <div>
+                                            <form:radiobutton path="answer" value="C" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
+                                            <label>C</label>
+                                        </div>
+                                        <div>
+                                            <form:radiobutton path="answer" value="D" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
+                                            <label>D</label>
+                                        </div>
                                         ${errorAnswer}
                                     </div>
                                     <div class="col-12 mb-3 d-flex justify-content-between">

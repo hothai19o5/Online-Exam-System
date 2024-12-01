@@ -22,7 +22,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -60,11 +60,14 @@
                             <div class="col-md-6 col-12 mx-auto">
                                 <h3>Update a question</h3>
                                 <hr />
-                                <form:form action="/admin/question/update" method="post" modelAttribute="question"
-                                    enctype="multipart/form-data">
+                                <form:form action="/admin/question/update" method="post" modelAttribute="question" enctype="multipart/form-data">
                                     <div class="mb-3" style="display: none;">
                                         <label class="form-label">Id:</label>
                                         <form:input type="text" class="form-control" path="id"/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Question Title: </label>
+                                        <form:input type="text" class="form-control" path="title" />
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Question Description: </label>
@@ -131,7 +134,7 @@
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.js"></script>
 
 </body>
 

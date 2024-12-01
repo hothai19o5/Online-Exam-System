@@ -61,7 +61,7 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Available Questions</h6>
                         </div>
-                        <form:form action="/admin/exam/update" method="POST" modelAttribute="listId">
+                        <form:form action="/admin/exam/update" method="POST">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>

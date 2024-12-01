@@ -23,6 +23,10 @@ public class Question {
     private int id;
 
     @NotNull
+    @NotEmpty(message = "Title cannot empty")
+    private String title;
+
+    @NotNull
     @NotEmpty(message = "Question Description cannot empty")
     @Column(columnDefinition = "TEXT")
     private String questionDesc;
@@ -110,9 +114,16 @@ public class Question {
     public void setAnswers(Set<Answer> answers) {
         this.answers = answers;
     }
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
     @Override
     public String toString() {
-        return "Question [id=" + id + ", questionDesc=" + questionDesc + ", option1=" + option1 + ", option2=" + option2
-                + ", option3=" + option3 + ", option4=" + option4 + ", answer=" + answer + ", answers=" + answers + "]";
+        return "Question [id=" + id + ", title=" + title + ", questionDesc=" + questionDesc + ", option1=" + option1
+                + ", option2=" + option2 + ", option3=" + option3 + ", option4=" + option4 + ", answer=" + answer
+                + ", exams=" + exams + ", answers=" + answers + "]";
     }
 }

@@ -49,6 +49,7 @@ public class QuestionController {
         }
 
         Question question = this.questionService.getQuestionById(dataForm.getId());
+        question.setTitle(dataForm.getTitle());
         question.setQuestionDesc(dataForm.getQuestionDesc());
         question.setOption1(dataForm.getOption1());
         question.setOption2(dataForm.getOption2());
@@ -82,8 +83,7 @@ public class QuestionController {
     }
 
     @PostMapping("/admin/question/create")
-    public String createQuestionPage(Model model, @ModelAttribute("newQuestion") @Valid Question dataForm,
-            BindingResult newUserBindingResult) {
+    public String createQuestionPage(Model model, @ModelAttribute("newQuestion") @Valid Question dataForm, BindingResult newUserBindingResult) {
 
         if (newUserBindingResult.hasErrors()) {
             return "/admin/question/create";

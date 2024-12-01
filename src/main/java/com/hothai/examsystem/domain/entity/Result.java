@@ -17,13 +17,7 @@ public class Result {
     private int id;
 
     @NotNull
-    private String mark;
-
-    @NotNull
     private String totalMark;
-
-    @NotNull
-    private String status;
 
     @ManyToOne
     @JoinColumn(name="exam_id")
@@ -39,23 +33,11 @@ public class Result {
     public void setId(int id) {
         this.id = id;
     }
-    public String getMark() {
-        return mark;
-    }
-    public void setMark(String mark) {
-        this.mark = mark;
-    }
     public String getTotalMark() {
         return totalMark;
     }
     public void setTotalMark(String totalMark) {
         this.totalMark = totalMark;
-    }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
     }
     public Exam getExam() {
         return exam;
@@ -71,7 +53,6 @@ public class Result {
     }
     @Override
     public String toString() {
-        return "Result [id=" + id + ", mark=" + mark + ", totalMark=" + totalMark + ", status=" + status + ", exam="
-                + exam + ", user=" + user + "]";
+        return "Result [id=" + id + ", totalMark=" + totalMark + ", exam=" + exam + ", user=" + user + "]";
     }
 }

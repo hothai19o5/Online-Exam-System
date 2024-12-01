@@ -46,6 +46,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Answer> answers;
 
+    @OneToMany(mappedBy = "user")
+    private Set<UserBatch> userBatches;
+
     public int getId() {
         return id;
     }
@@ -118,10 +121,19 @@ public class User {
         this.avatar = avatar;
     }
 
+    public Set<UserBatch> getUserBatches() {
+        return userBatches;
+    }
+
+    public void setUserBatches(Set<UserBatch> userBatches) {
+        this.userBatches = userBatches;
+    }
+
     @Override
     public String toString() {
         return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", phone="
-                + phone + ", avatar=" + avatar + ", role=" + role + ", results=" + results + ", answers=" + answers  + "]";
+                + phone + ", avatar=" + avatar + ", role=" + role + ", results=" + results + ", answers=" + answers
+                + ", userBatches=" + userBatches + "]";
     }
 
 }

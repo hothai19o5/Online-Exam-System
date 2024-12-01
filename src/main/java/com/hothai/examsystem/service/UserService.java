@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.hothai.examsystem.domain.dto.RegisterDTO;
 import com.hothai.examsystem.domain.entity.Role;
 import com.hothai.examsystem.domain.entity.User;
 import com.hothai.examsystem.repository.RoleRepository;
@@ -31,6 +32,14 @@ public class UserService {
         return this.userRepository.findByEmail(email);
     }
 
+    public User getUserByUsername(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    public List<User> getAllUserByRole(String roleName) {
+        return this.userRepository.findAllByRoleName(roleName);
+    }
+
     public Role getRoleByName(String name) {
         return this.roleRepository.findByName(name);
     }
@@ -41,5 +50,18 @@ public class UserService {
 
     public void handleDeleteUser(int id) {
         this.userRepository.deleteById(id);
+    }
+
+    public boolean existsByEmail(String email) {
+        return this.userRepository.existsByEmail(email);
+    }
+
+    public User registerDTOtoUser(RegisterDTO registerUser){
+        User user = new User();
+        user.setUsername(registerUser.getFirstName() + " " + registerUser.getLastName());
+        user.setEmail(registerUser.getEmail());
+        user.setPassword(registerUser.getPassword());
+        user.setAvatar("img_avatar.jpg");
+        return user;
     }
 }

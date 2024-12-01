@@ -67,6 +67,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Title</th>
                                             <th>Question</th>
                                             <th>Option 1</th>
                                             <th>Option 2</th>
@@ -79,6 +80,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Title</th>
                                             <th>Question</th>
                                             <th>Option 1</th>
                                             <th>Option 2</th>
@@ -92,6 +94,7 @@
                                         <c:forEach var="question" items="${questions}">
                                             <tr>
                                                 <td>${question.id}</td>
+                                                <td>${question.title}</td>
                                                 <td>${question.questionDesc}</td>
                                                 <td>${question.option1}</td>
                                                 <td>${question.option2}</td>

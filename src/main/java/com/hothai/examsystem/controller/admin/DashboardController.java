@@ -30,7 +30,7 @@ public class DashboardController {
 
     @GetMapping("/admin")
     public String getDashBoard(Model model) {
-        model.addAttribute("totalUser", this.userService.getAllUser().size());
+        model.addAttribute("totalUser", this.userService.getAllUserByRole("STUDENT").size());
         model.addAttribute("totalExam", this.examService.getAllExams().size());
         model.addAttribute("totalNotice", this.noticeService.getAllNotices().size());
         model.addAttribute("totalQuestion", this.questionService.getAllQuestions().size());
