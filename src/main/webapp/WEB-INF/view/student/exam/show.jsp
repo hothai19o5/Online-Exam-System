@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Student</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,36 +59,39 @@
                         <!-- Completed Exam -->
                         <h4>Completed Exam</h4>
 
-
-                        <div class="card mb-3 bg-success text-white shadow">
-                            <div class="card-body">
-                                <h6>Exam Name: Java</h6>
-                                <p>Description: Java Exam</p>
-                                <div class="d-flex justify-content-between">
-                                    <span>Question: 10</span>
-                                    <span>Time: 10 Minute</span>
-                                    <span>Marks: 40</span>
+                        <c:forEach var="completedExam" items="${completedExams}">
+                            <div class="card mb-3 bg-success text-white shadow">
+                                <div class="card-body">
+                                    <h6>Exam Name: ${completedExam.title}</h6>
+                                    <p>Description: ${completedExam.examDesc}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Questions: ${completedExam.totalQuestion}</span>
+                                        <span>Time: ${completedExam.duration} Minute</span>
+                                        <span>Marks: ${completedExam.totalQuestion*completedExam.markRight}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
 
                         <!-- Divider -->
                         <hr class="sidebar-divider">
 
-                        <!-- All Exam -->
-                        <h4>All Exam</h4>
+                        <!-- Uncompleted Exams -->
+                        <h4>Uncompleted Exams</h4>
 
-                        <div class="card mb-3 bg-info text-white shadow">
-                            <div class="card-body">
-                                <h6>Exam Name: Java</h6>
-                                <p>Description: Java Exam</p>
-                                <div class="d-flex justify-content-between">
-                                    <span>Question: 10</span>
-                                    <span>Time: 10 Minute</span>
-                                    <span>Marks: 40</span>
+                        <c:forEach var="completedExam" items="${completedExams}">
+                            <div class="card mb-3 bg-success text-white shadow">
+                                <div class="card-body">
+                                    <h6>Exam Name: ${completedExam.title}</h6>
+                                    <p>Description: ${completedExam.examDesc}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Questions: ${completedExam.totalQuestion}</span>
+                                        <span>Time: ${completedExam.duration} Minute</span>
+                                        <span>Marks: ${completedExam.totalQuestion*completedExam.markRight}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
 
                         <!-- Divider -->
                         <hr class="sidebar-divider">

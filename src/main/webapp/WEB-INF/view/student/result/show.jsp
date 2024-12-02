@@ -32,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <jsp:include page="layout/sidebar.jsp" />
+        <jsp:include page="../layout/sidebar.jsp" />
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -42,12 +42,58 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <jsp:include page="layout/topbar.jsp" />
+                <jsp:include page="../layout/topbar.jsp" />
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div style="width: 40%; height: auto; overflow: hidden;" class="container-fluid">
-                    <img src="/img/dashboard.png" alt="img" style="width: 100%; height: auto; object-fit: cover;">
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Results</h1>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="mt-4">
+
+                        <!-- Completed Exam -->
+                        <h4>Completed Exam</h4>
+
+
+                        <div class="card mb-3 bg-success text-white shadow">
+                            <div class="card-body">
+                                <h6>Exam Name: Java</h6>
+                                <p>Description: Java Exam</p>
+                                <div class="d-flex justify-content-between">
+                                    <span>Question: 10</span>
+                                    <span>Time: 10 Minute</span>
+                                    <span>Marks: 40</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
+
+                        <!-- All Exam -->
+                        <h4>All Exam</h4>
+
+                        <div class="card mb-3 bg-info text-white shadow">
+                            <div class="card-body">
+                                <h6>Exam Name: Java</h6>
+                                <p>Description: Java Exam</p>
+                                <div class="d-flex justify-content-between">
+                                    <span>Question: 10</span>
+                                    <span>Time: 10 Minute</span>
+                                    <span>Marks: 40</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="sidebar-divider">
+
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -55,7 +101,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <jsp:include page="layout/footer.jsp" />
+            <jsp:include page="../layout/footer.jsp" />
             <!-- End of Footer -->
 
         </div>
@@ -70,7 +116,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <jsp:include page="layout/logoutModal.jsp" />
+    <jsp:include page="../layout/logoutModal.jsp" />
 
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>

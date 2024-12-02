@@ -41,6 +41,8 @@ public class ExamController {
         model.addAttribute("id", id);
         Exam exam = this.examService.getExamById(id);
         model.addAttribute("exam", exam);
+        List<Question> questions = exam.getQuestions();
+        model.addAttribute("questions", questions);
         return "admin/exam/detail";
     }
 

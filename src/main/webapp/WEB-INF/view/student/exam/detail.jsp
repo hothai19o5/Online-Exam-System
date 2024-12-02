@@ -91,7 +91,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6>Time Left : <span class="text-danger">9:29</span></h6>
+                                    <h6>Time Left : <span id="time-left" class="text-danger">${exam.duration}:00</span></h6>
                                     <ul class="list-unstyled mt-3">
                                         <li><strong>Name:</strong> ${sessionScope.userName}</li>
                                         <li><strong>Exam Name:</strong> ${exam.title}</li>
@@ -138,6 +138,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
+
 
 </body>
 

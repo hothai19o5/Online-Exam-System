@@ -9,7 +9,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Admin</div>
+        <div class="sidebar-brand-text mx-3">OES</div>
     </a>
 
     <!-- Divider -->
@@ -30,6 +30,16 @@
         <a class="nav-link" href="/student/exam">
             <i class="fas fa-fw fa-table"></i>
             <span>Exams</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Result -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/student/result">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Results</span></a>
     </li>
 
     <!-- Divider -->

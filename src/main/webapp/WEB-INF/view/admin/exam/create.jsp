@@ -60,37 +60,36 @@
                             <div class="col-md-6 col-12 mx-auto">
                                 <h3>Create new exam</h3>
                                 <hr />
-                                <form:form action="/admin/exam/create" method="post" modelAttribute="newExam"
-                                    enctype="multipart/form-data">
+                                <form:form action="/admin/exam/create" method="post" modelAttribute="newExam" enctype="multipart/form-data">
                                     <div class="mb-3">
                                         <c:set var="errorExamTitle">
                                             <form:errors path="title" cssClass="invalid-feedback" />
                                         </c:set>
                                         <label class="form-label">Exam Title:</label>
                                         <form:input type="text"
-                                            class="form-control ${not empty errorExamTitle ? 'is-invalid' : ''}"
-                                            path="title" />
+                                            class="form-control ${not empty errorExamTitle ? 'is-invalid' : ''}" path="title" />
                                         ${errorExamTitle}
                                     </div>
-                                    <div class="mb-3">
-                                        <c:set var="errorDuration">
-                                            <form:errors path="duration" cssClass="invalid-feedback" />
-                                        </c:set>
-                                        <label class="form-label">Duration:</label>
-                                        <form:input type="number"
-                                            class="form-control ${not empty errorDuration ? 'is-invalid' : ''}"
-                                            path="duration" />
-                                        ${errorDuration}
-                                    </div>
-                                    <div class="mb-3">
-                                        <c:set var="errorTotalQuestion">
-                                            <form:errors path="totalQuestion" cssClass="invalid-feedback" />
-                                        </c:set>
-                                        <label class="form-label">Total Question:</label>
-                                        <form:input type="number"
-                                            class="form-control ${not empty errorTotalQuestion ? 'is-invalid' : ''}"
-                                            path="totalQuestion" />
-                                        ${errorTotalQuestion}
+                                    <!-- Row for duration and total question -->
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <c:set var="errorDuration">
+                                                <form:errors path="duration" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <label class="form-label">Duration:</label>
+                                            <form:input type="number"
+                                                class="form-control ${not empty errorDuration ? 'is-invalid' : ''}" path="duration" />
+                                            ${errorDuration}
+                                        </div>
+                                        <div class="col-6">
+                                            <c:set var="errorTotalQuestion">
+                                                <form:errors path="totalQuestion" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <label class="form-label">Total Question:</label>
+                                            <form:input type="number"
+                                                class="form-control ${not empty errorTotalQuestion ? 'is-invalid' : ''}" path="totalQuestion" />
+                                            ${errorTotalQuestion}
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <c:set var="errorExamDesc">
@@ -98,29 +97,29 @@
                                         </c:set>
                                         <label class="form-label">Exam Description:</label>
                                         <form:input type="text"
-                                            class="form-control ${not empty errorExamDesc ? 'is-invalid' : ''}"
-                                            path="examDesc" />
+                                            class="form-control ${not empty errorExamDesc ? 'is-invalid' : ''}" path="examDesc" />
                                         ${errorExamDesc}
                                     </div>
-                                    <div class="mb-3">
-                                        <c:set var="errorMarkWrong">
-                                            <form:errors path="markWrong" cssClass="invalid-feedback" />
-                                        </c:set>
-                                        <label class="form-label">Mark Wrong:</label>
-                                        <form:input type="number"
-                                            class="form-control ${not empty errorMarkWrong ? 'is-invalid' : ''}"
-                                            path="markWrong" />
-                                        ${errorMarkWrong}
-                                    </div>
-                                    <div class="mb-3">
-                                        <c:set var="errorMarkRight">
-                                            <form:errors path="markRight" cssClass="invalid-feedback" />
-                                        </c:set>
-                                        <label class="form-label">Mark Right:</label>
-                                        <form:input type="text"
-                                            class="form-control ${not empty errorMarkRight ? 'is-invalid' : ''}"
-                                            path="markRight" />
-                                        ${errorMarkRight}
+                                    <!-- Row for mark wrong and mark right -->
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <c:set var="errorMarkWrong">
+                                                <form:errors path="markWrong" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <label class="form-label">Mark Wrong:</label>
+                                            <form:input type="number"
+                                                class="form-control ${not empty errorMarkWrong ? 'is-invalid' : ''}" path="markWrong" />
+                                            ${errorMarkWrong}
+                                        </div>
+                                        <div class="col-6">
+                                            <c:set var="errorMarkRight">
+                                                <form:errors path="markRight" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <label class="form-label">Mark Right:</label>
+                                            <form:input type="number"
+                                                class="form-control ${not empty errorMarkRight ? 'is-invalid' : ''}" path="markRight" />
+                                            ${errorMarkRight}
+                                        </div>
                                     </div>
                                     <div class="col-12 mb-3 d-flex justify-content-between">
                                         <button type="submit" class="btn btn-primary">Create</button>
@@ -128,6 +127,7 @@
                                     </div>
                                 </form:form>
                             </div>
+
                         </div>
                     </div>
 

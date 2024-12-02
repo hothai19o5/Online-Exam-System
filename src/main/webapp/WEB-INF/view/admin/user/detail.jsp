@@ -51,8 +51,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Student Infomation</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="/admin/user" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
+                            <i class="text-white-50"></i> Back</a>
                     </div>
 
                     <div class="card shadow mb-4">
@@ -62,10 +62,6 @@
                         <div class="card-body">
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">Student Id:</th>
-                                        <td>${user.id}</td>
-                                    </tr>
                                     <tr>
                                         <th scope="row">Full Name:</th>
                                         <td>${user.username}</td>
@@ -77,10 +73,6 @@
                                     <tr>
                                         <th scope="row">Phone:</th>
                                         <td>${user.phone}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Password:</th>
-                                        <td>${user.password}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Avatar:</th>

@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.hothai.examsystem.domain.entity.Exam;
 import com.hothai.examsystem.domain.entity.Result;
+import com.hothai.examsystem.domain.entity.User;
 import com.hothai.examsystem.repository.ResultRepository;
 
 @Service
@@ -18,5 +20,13 @@ public class ResultService {
 
     public List<Result> getAllResults() {
         return this.resultRepository.findAll();
+    }
+
+    public void saveResult(Result result) {
+        this.resultRepository.save(result);
+    }
+
+    public Result getResultByUserAndExam(User user, Exam exam) {
+        return this.resultRepository.findByUserAndExam(user, exam);
     }
 }

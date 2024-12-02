@@ -71,10 +71,6 @@
                                         <form:input type="email" class="form-control" path="email" />
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Password:</label>
-                                        <form:input type="text" class="form-control" path="password" />
-                                    </div>
-                                    <div class="mb-3">
                                         <c:set var="errorPhoneNumber">
                                             <form:errors path="phone" cssClass="invalid-feedback" />
                                         </c:set>

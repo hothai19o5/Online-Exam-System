@@ -17,7 +17,7 @@ public class Result {
     private int id;
 
     @NotNull
-    private String totalMark;
+    private double totalMark;
 
     @ManyToOne
     @JoinColumn(name="exam_id")
@@ -33,10 +33,10 @@ public class Result {
     public void setId(int id) {
         this.id = id;
     }
-    public String getTotalMark() {
+    public double getTotalMark() {
         return totalMark;
     }
-    public void setTotalMark(String totalMark) {
+    public void setTotalMark(double totalMark) {
         this.totalMark = totalMark;
     }
     public Exam getExam() {

@@ -24,6 +24,8 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -55,7 +57,57 @@
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                ${exam.title} _ ${exam.duration} minutes _ ${exam.totalQuestion} questions _ Right + ${exam.markRight} _ Wrong - ${exam.markWrong}
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Question</th>
+                                            <th>Option 1</th>
+                                            <th>Option 2</th>
+                                            <th>Option 3</th>
+                                            <th>Option 4</th>
+                                            <th>Answer</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Question</th>
+                                            <th>Option 1</th>
+                                            <th>Option 2</th>
+                                            <th>Option 3</th>
+                                            <th>Option 4</th>
+                                            <th>Answer</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <c:forEach var="question" items="${questions}">
+                                            <tr>
+                                                <td>${question.id}</td>
+                                                <td>${question.title}</td>
+                                                <td>${question.questionDesc}</td>
+                                                <td>${question.option1}</td>
+                                                <td>${question.option2}</td>
+                                                <td>${question.option3}</td>
+                                                <td>${question.option4}</td>
+                                                <td>${question.answer}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -91,6 +143,12 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
