@@ -65,6 +65,16 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <!-- Nav Item - Results -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/admin/batch">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Classes</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

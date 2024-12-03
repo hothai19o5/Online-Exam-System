@@ -24,8 +24,6 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this page -->
-    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -52,50 +50,43 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Results</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Add Student In Class</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Available Student</h6>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                        <form:form action="/admin/exam/update" method="POST" modelAttribute="dataForm">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Student Email</th>
+                                        <th>Add</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Student Email</th>
+                                        <th>Add</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <c:forEach var="user" items="${users}">
                                         <tr>
-                                            <th>Exam Title</th>
-                                            <th>Student Email</th>
-                                            <th>Mark</th>
-                                            <th>Action</th>
+                                            <td>${user.email}</td>
+                                            <td><input type="checkbox" name="userId" value="${user.id}"></td>
                                         </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Exam Title</th>
-                                            <th>Student Email</th>
-                                            <th>Mark</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <c:forEach var="result" items="${results}">
-                                            <tr>
-                                                <td>${result.exam.title}</td>
-                                                <td>${result.user.username}</td>
-                                                <td>${result.totalMark}</td>
-                                                <td>
-                                                    <a href="/admin/result/update/${result.id}" class="btn btn-primary">Edit</a>
-                                                    <a href="/admin/result/delete/${result.id}" class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                            <input type="hidden" name="batchId" value="${batch.id}">
+                            <div class="d-flex justify-content-center mb-3">
+                                <button type="submit" class="btn btn-info">Submit</button>
                             </div>
-                        </div>
+                        </form:form>
                     </div>
 
                 </div>
@@ -132,12 +123,6 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

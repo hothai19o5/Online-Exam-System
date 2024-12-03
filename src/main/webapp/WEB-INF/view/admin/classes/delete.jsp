@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Online Exam System</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,11 +50,32 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Questions</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Batch</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
+                    <div class="mt-5">
+                        <div class="row">
+                            <div class="col-md-6 col-12 mx-auto">
+                                <form:form action="/admin/batch/delete" method="post" modelAttribute="result">
+                                    <h3>Delete Batch: ${name} - ${scholastic}</h3>
+                                    <hr />
+                                    <div class="alert alert-danger" role="alert">
+                                        Are you sure to delete this batch ?
+                                    </div>
+                                    <div class="mb-3" style="display: none;">
+                                        <label class="form-label">Id:</label>
+                                        <form:input type="text" class="form-control" path="id" />
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <button type="submit" class="btn btn-danger">Confirm</button>
+                                        <a href="/admin/batch" class="btn btn-primary">Back</a>
+                                    </div>
+                                </form:form>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>

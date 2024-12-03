@@ -23,6 +23,8 @@ public class Batch {
     @NotNull
     private String scholastic;
 
+    private int quantityStudent;
+
     @OneToMany(mappedBy = "batch")
     private Set<Enroll> enrolls;
 
@@ -59,9 +61,15 @@ public class Batch {
     public void setUserBatches(Set<UserBatch> userBatches) {
         this.userBatches = userBatches;
     }
+    public int getQuantityStudent() {
+        return quantityStudent;
+    }
+    public void setQuantityStudent(int quantityStudent) {
+        this.quantityStudent = quantityStudent;
+    }
     @Override
     public String toString() {
-        return "Batch [id=" + id + ", name=" + name + ", scholastic=" + scholastic + ", enrolls=" + enrolls
-                + ", userBatches=" + userBatches + "]";
+        return "Batch [id=" + id + ", name=" + name + ", scholastic=" + scholastic + ", quantityStudent="
+                + quantityStudent + ", enrolls=" + enrolls + ", userBatches=" + userBatches + "]";
     }
 }

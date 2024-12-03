@@ -58,10 +58,7 @@ public class ExamController {
 
     @PostMapping("/admin/exam/update")
     public String postUpdateUser(Model model, @RequestParam("questionIds") List<Integer> questionIds, @RequestParam("examId") int examId) {
-         // Log dữ liệu nhận được
-         System.out.println("Exam ID: " + examId);
-         System.out.println("Selected Questions: " + questionIds);
-         this.examService.addQuestionToExam(examId, questionIds);
+        this.examService.addQuestionToExam(examId, questionIds);
         return "redirect:/admin/exam";
     }
 

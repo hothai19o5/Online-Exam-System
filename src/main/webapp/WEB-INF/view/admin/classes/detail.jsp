@@ -24,8 +24,6 @@
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this page -->
-    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -52,44 +50,37 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Results</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Classes</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                ${batch.name} _ ${batch.scholastic} _ ${batch.quantityStudent} students
+                            </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Exam Title</th>
+                                            <th>Student Name</th>
                                             <th>Student Email</th>
-                                            <th>Mark</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Exam Title</th>
+                                            <th>Student Name</th>
                                             <th>Student Email</th>
-                                            <th>Mark</th>
-                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <c:forEach var="result" items="${results}">
+                                        <c:forEach var="user" items="${users}">
                                             <tr>
-                                                <td>${result.exam.title}</td>
-                                                <td>${result.user.username}</td>
-                                                <td>${result.totalMark}</td>
-                                                <td>
-                                                    <a href="/admin/result/update/${result.id}" class="btn btn-primary">Edit</a>
-                                                    <a href="/admin/result/delete/${result.id}" class="btn btn-danger">Delete</a>
-                                                </td>
+                                                <td>${user.fullName}</td>
+                                                <td>${user.email}</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -132,12 +123,6 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

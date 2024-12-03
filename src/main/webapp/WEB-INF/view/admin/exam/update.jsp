@@ -92,35 +92,6 @@
                                 <button type="submit" class="btn btn-info">Submit</button>
                             </div>
                         </form:form>
-                        <!-- <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Question</th>
-                                            <th>Add</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Question</th>
-                                            <th>Add</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <c:forEach var="question" items="${questions}">
-                                            <tr>
-                                                <td>${question.id}</td>
-                                                <td>${question.questionDesc}</td>
-                                                <td><input type="checkbox" data-id="${question.id}"></td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> -->
                     </div>
 
                 </div>

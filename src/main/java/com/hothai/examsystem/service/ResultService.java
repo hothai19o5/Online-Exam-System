@@ -22,6 +22,14 @@ public class ResultService {
         return this.resultRepository.findAll();
     }
 
+    public Result getResultById(int id) {
+        return this.resultRepository.findOneById(id);
+    }
+
+    public void deleteById(int id) {
+        this.resultRepository.deleteById(id);
+    }
+
     public void saveResult(Result result) {
         this.resultRepository.save(result);
     }

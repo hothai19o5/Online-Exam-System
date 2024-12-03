@@ -52,9 +52,9 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Results</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800">Classes</h1>
+                        <a href="/admin/batch/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-download fa-sm text-white-50"></i> Create New Class</a>
                     </div>
 
                     <div class="card shadow mb-4">
@@ -66,29 +66,33 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Exam Title</th>
-                                            <th>Student Email</th>
-                                            <th>Mark</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Scholastic</th>
+                                            <th>Quantity Student</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Exam Title</th>
-                                            <th>Student Email</th>
-                                            <th>Mark</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Scholastic</th>
+                                            <th>Quantity Student</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <c:forEach var="result" items="${results}">
+                                        <c:forEach var="batch" items="${batches}">
                                             <tr>
-                                                <td>${result.exam.title}</td>
-                                                <td>${result.user.username}</td>
-                                                <td>${result.totalMark}</td>
+                                                <td>${batch.id}</td>
+                                                <td>${batch.name}</td>
+                                                <td>${batch.scholastic}</td>
+                                                <th>${batch.quantityStudent}</th>
                                                 <td>
-                                                    <a href="/admin/result/update/${result.id}" class="btn btn-primary">Edit</a>
-                                                    <a href="/admin/result/delete/${result.id}" class="btn btn-danger">Delete</a>
+                                                    <a href="/admin/batch/${batch.id}" class="btn btn-info">Detail</a>
+                                                    <a href="/admin/batch/update/${batch.id}" class="btn btn-primary">Edit</a>
+                                                    <a href="/admin/batch/delete/${batch.id}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         </c:forEach>
