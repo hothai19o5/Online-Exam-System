@@ -17,27 +17,47 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="/student">
+        <a class="nav-link" href="/teacher">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
     <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
+    <hr class="sidebar-divider">
 
-    <!-- Nav Item - Exams -->
-    <!-- <li class="nav-item active">
-        <a class="nav-link" href="/student/exam">
+    <!-- Nav Item - Students -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/teacher/user">
             <i class="fas fa-fw fa-table"></i>
-            <span>Exams</span></a>
-    </li> -->
+            <span>Students</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Result -->
+    <!-- Nav Item - Exams -->
     <li class="nav-item active">
-        <a class="nav-link" href="/student/result">
+        <a class="nav-link" href="/teacher/exam">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Exams</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Questions -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/teacher/question">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Questions</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Results -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/teacher/result">
             <i class="fas fa-fw fa-table"></i>
             <span>Results</span></a>
     </li>
@@ -45,21 +65,11 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Result -->
+    <!-- Nav Item - Results -->
     <li class="nav-item active">
-        <a class="nav-link" href="/student/class">
+        <a class="nav-link" href="/teacher/batch">
             <i class="fas fa-fw fa-table"></i>
-            <span>Class</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Notices -->
-    <li class="nav-item active">
-        <a class="nav-link" href="/student/notice">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Notices</span></a>
+            <span>Classes</span></a>
     </li>
 
     <!-- Divider -->

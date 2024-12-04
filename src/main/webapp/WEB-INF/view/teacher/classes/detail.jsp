@@ -50,55 +50,45 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Exams</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Classes</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                    <!-- Content Section -->
-                    <div class="mt-4">
-
-                        <!-- Completed Exam -->
-                        <h4>Completed Exam</h4>
-
-                        <c:forEach var="completedExam" items="${completedExams}">
-                            <div class="card mb-3 bg-success text-white shadow">
-                                <div class="card-body">
-                                    <h6>Exam Name: ${completedExam.title}</h6>
-                                    <p>Description: ${completedExam.examDesc}</p>
-                                    <div class="d-flex justify-content-between">
-                                        <span>Questions: ${completedExam.totalQuestion}</span>
-                                        <span>Time: ${completedExam.duration} Minute</span>
-                                        <span>Marks: ${completedExam.totalQuestion*completedExam.markRight}</span>
-                                    </div>
-                                </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                ${batch.name} _ ${batch.scholastic} _ ${batch.quantityStudent} students
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Student Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Student Email</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <c:forEach var="user" items="${users}">
+                                            <tr>
+                                                <td>${user.username}</td>
+                                                <td>${user.email}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
-                        </c:forEach>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider">
-
-                        <!-- Uncompleted Exams -->
-                        <h4>Uncompleted Exams</h4>
-
-                        <c:forEach var="uncompletedExam" items="${uncompletedExams}">
-                            <a href="/student/exam/${uncompletedExam.id}" class="text-decoration-none">
-                                <div class="card mb-3 bg-info text-white shadow">
-                                    <div class="card-body">
-                                        <h6>Exam Name: ${uncompletedExam.title}</h6>
-                                        <p>Description: ${uncompletedExam.examDesc}</p>
-                                        <div class="d-flex justify-content-between">
-                                            <span>Questions: ${uncompletedExam.totalQuestion}</span>
-                                            <span>Time: ${uncompletedExam.duration} Minute</span>
-                                            <span>Marks: ${uncompletedExam.totalQuestion*uncompletedExam.markRight}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </c:forEach>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider">
-
+                        </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 

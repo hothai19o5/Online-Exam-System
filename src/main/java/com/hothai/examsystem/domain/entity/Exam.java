@@ -26,7 +26,7 @@ public class Exam {
     private String title;
 
     @NotNull
-    private String duration;
+    private int duration;
 
     @NotNull
     private String totalQuestion;
@@ -36,10 +36,10 @@ public class Exam {
     private String examDesc;
 
     @NotNull
-    private String markWrong;
+    private double markWrong;
 
     @NotNull
-    private String markRight;
+    private double markRight;
 
     @OneToMany(mappedBy = "exam")
     private Set<Result> results;
@@ -65,10 +65,10 @@ public class Exam {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getDuration() {
+    public int getDuration() {
         return duration;
     }
-    public void setDuration(String duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
     public String getTotalQuestion() {
@@ -83,16 +83,16 @@ public class Exam {
     public void setExamDesc(String examDesc) {
         this.examDesc = examDesc;
     }
-    public String getMarkWrong() {
+    public double getMarkWrong() {
         return markWrong;
     }
-    public void setMarkWrong(String markWrong) {
+    public void setMarkWrong(double markWrong) {
         this.markWrong = markWrong;
     }
-    public String getMarkRight() {
+    public double getMarkRight() {
         return markRight;
     }
-    public void setMarkRight(String markRight) {
+    public void setMarkRight(double markRight) {
         this.markRight = markRight;
     }
     public Set<Result> getResults() {

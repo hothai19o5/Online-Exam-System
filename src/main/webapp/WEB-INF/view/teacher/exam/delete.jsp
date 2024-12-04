@@ -51,54 +51,32 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Exams</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                    <!-- Content Section -->
-                    <div class="mt-4">
-
-                        <!-- Completed Exam -->
-                        <h4>Completed Exam</h4>
-
-                        <c:forEach var="completedExam" items="${completedExams}">
-                            <div class="card mb-3 bg-success text-white shadow">
-                                <div class="card-body">
-                                    <h6>Exam Name: ${completedExam.title}</h6>
-                                    <p>Description: ${completedExam.examDesc}</p>
+                    <div class="mt-5">
+                        <div class="row">
+                            <div class="col-md-6 col-12 mx-auto">
+                                <form:form action="/teacher/exam/delete" method="post" modelAttribute="exam">
+                                    <h3>Delete Exam With ID = ${id}</h3>
+                                    <hr />
+                                    <div class="alert alert-danger" role="alert">
+                                        Are you sure to delete this exam ?
+                                    </div>
+                                    <div class="mb-3" style="display: none;">
+                                        <label class="form-label">Id:</label>
+                                        <form:input type="text" class="form-control" path="id" />
+                                    </div>
                                     <div class="d-flex justify-content-between">
-                                        <span>Questions: ${completedExam.totalQuestion}</span>
-                                        <span>Time: ${completedExam.duration} Minute</span>
-                                        <span>Marks: ${completedExam.totalQuestion*completedExam.markRight}</span>
+                                        <button type="submit" class="btn btn-danger">Confirm</button>
+                                        <a href="/teacher/exam" class="btn btn-primary">Back</a>
                                     </div>
-                                </div>
+                                </form:form>
                             </div>
-                        </c:forEach>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider">
-
-                        <!-- Uncompleted Exams -->
-                        <h4>Uncompleted Exams</h4>
-
-                        <c:forEach var="uncompletedExam" items="${uncompletedExams}">
-                            <a href="/student/exam/${uncompletedExam.id}" class="text-decoration-none">
-                                <div class="card mb-3 bg-info text-white shadow">
-                                    <div class="card-body">
-                                        <h6>Exam Name: ${uncompletedExam.title}</h6>
-                                        <p>Description: ${uncompletedExam.examDesc}</p>
-                                        <div class="d-flex justify-content-between">
-                                            <span>Questions: ${uncompletedExam.totalQuestion}</span>
-                                            <span>Time: ${uncompletedExam.duration} Minute</span>
-                                            <span>Marks: ${uncompletedExam.totalQuestion*uncompletedExam.markRight}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </c:forEach>
-
-                        <!-- Divider -->
-                        <hr class="sidebar-divider">
-
+                        </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 

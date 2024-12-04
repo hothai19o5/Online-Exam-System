@@ -99,7 +99,7 @@
                                         <li><strong>Total Marks:</strong> 40</li>
                                         <li><strong>Mark for Correct:</strong> +${exam.markRight}</li>
                                         <li><strong>Mark for Wrong:</strong> -${exam.markWrong}</li>
-                                        <li><strong>Exam Duration:</strong> ${exam.duration} Minutes</li>
+                                        <li><strong>Exam Duration:</strong><span id="exam-duration" value={${exam.duration}}>${exam.duration}</span> Minutes</li>
                                     </ul>
                                 </div>
                             </div>
@@ -139,7 +139,30 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-
+    <!-- <script>
+        const timeExam = document.getElementById('exam-duration');
+        console.log(timeExam.getAttribute("value"));
+        let durationTime = 10;
+        console.log(durationTime);
+        const time_left = document.getElementById('time-left');
+        const solutionTime = (time) => {
+             const minutes = Math.floor(time / 60);
+             const seconds = time % 60;
+             return {minutes: minutes < 10 ? `0${minutes}` : `${minutes}`, seconds: seconds < 10 ? `0${seconds}` : `${seconds}`};
+        }
+        setInterval(()=>{
+            if (durationTime <= 0) {
+                time_left.textContent = "00:00";
+                document.getElementById('submit-form').click();
+                clearInterval(timer);
+            } else {
+            durationTime--;
+            console.log(durationTime);
+            const { minutes, seconds } = solutionTime(durationTime);
+            time_left.textContent = `${minutes}:${seconds}`;
+            }
+        }, 1000)
+     </script> -->
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 package com.hothai.examsystem.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hothai.examsystem.domain.entity.Exam;
@@ -10,4 +12,6 @@ public interface ResultRepository extends JpaRepository<Result, Integer>{
     public Result findOneById(long id);
 
     public Result findByUserAndExam(User user, Exam exam);
+
+    public List<Result> findByUser(User user);
 }

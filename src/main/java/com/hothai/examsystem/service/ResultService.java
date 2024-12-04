@@ -37,4 +37,8 @@ public class ResultService {
     public Result getResultByUserAndExam(User user, Exam exam) {
         return this.resultRepository.findByUserAndExam(user, exam);
     }
+
+    public List<Result> getByUser(User user) {
+        return this.resultRepository.findByUser(user);
+    }
 }

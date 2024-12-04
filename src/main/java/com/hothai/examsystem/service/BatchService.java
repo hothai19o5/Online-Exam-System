@@ -27,4 +27,8 @@ public class BatchService {
     public void handleSaveBatch(Batch batch) {
         this.batchRepository.save(batch);
     }
+
+    public void handleDeleteBatch(int id) {
+        this.batchRepository.deleteById(id);
+    }
 }

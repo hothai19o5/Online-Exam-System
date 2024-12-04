@@ -32,8 +32,8 @@ public class StudentDashboardController {
     private final EnrollService enrollService;
     private final ResultService resultService;
 
-    public StudentDashboardController(UserService userService, PasswordEncoder passwordEncoder,
-                                        UserBatchService userBatchService, EnrollService enrollService, ResultService resultService) {
+    public StudentDashboardController(UserService userService, PasswordEncoder passwordEncoder, UserBatchService userBatchService,
+                                        EnrollService enrollService, ResultService resultService) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.userBatchService = userBatchService;
@@ -42,35 +42,12 @@ public class StudentDashboardController {
     }
 
     @GetMapping("/student")
-    public String getStudentDashboardPage() {
-        return "student/dashboard";
-    }
-
-    @GetMapping("/student/exam")
-    public String getStudentExamPage(HttpServletRequest request, Model model) {
+    public String getStudentDashboardPage(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         int userId = (int) session.getAttribute("id");
         User user = this.userService.getUserById(userId);
-        List<Batch> batchs = this.userBatchService.getBatchByUser(user);
-        List<Exam> exams = new ArrayList<>();
-        for(Batch batch : batchs) {
-            exams.addAll(this.enrollService.getExamsByBatch(batch));
-        }
-        model.addAttribute("exams", exams);
-        List<Exam> completedExams = new ArrayList<>();
-        List<Exam> uncompletedExams = new ArrayList<>();
-        for(Exam exam : exams) {
-            Result result = this.resultService.getResultByUserAndExam(user, exam);
-            if(result != null) {
-                completedExams.add(exam);
-            }else {
-                uncompletedExams.add(exam);
-            }
-        }
-        model.addAttribute("completedExams", completedExams);
-        model.addAttribute("uncompletedExams", uncompletedExams);
-
-        return "student/exam/show";
+        // Sẽ code tiếp tại đây
+        return "student/dashboard";
     }
 
     @GetMapping("/register")

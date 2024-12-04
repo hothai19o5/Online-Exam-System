@@ -170,13 +170,10 @@
                     Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <form method="post" action="/logout">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <a class="dropdown-item" href="#" onclick="this.parentNode.submit();">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>
-                </form>
             </div>
         </li>
 
