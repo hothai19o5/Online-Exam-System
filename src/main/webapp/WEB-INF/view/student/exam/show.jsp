@@ -67,7 +67,6 @@
                                     <div class="d-flex justify-content-between">
                                         <span>Questions: ${completedExam.totalQuestion}</span>
                                         <span>Time: ${completedExam.duration} Minute</span>
-                                        <span>Marks: ${completedExam.totalQuestion*completedExam.markRight}</span>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@
                         <h4>Uncompleted Exams</h4>
 
                         <c:forEach var="uncompletedExam" items="${uncompletedExams}">
-                            <a href="/student/exam/${uncompletedExam.id}" class="text-decoration-none">
+                            <a href="#" class="text-decoration-none" data-target="#confirmModal" data-toggle="modal">
                                 <div class="card mb-3 bg-info text-white shadow">
                                     <div class="card-body">
                                         <h6>Exam Name: ${uncompletedExam.title}</h6>
@@ -93,6 +92,30 @@
                                     </div>
                                 </div>
                             </a>
+
+                            <!-- Confirm Modal -->
+
+                            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Are You Ready?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">x</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Select "Ready" below if you are ready.</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-primary" href="/student/exam/${uncompletedExam.id}">
+                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Ready
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </c:forEach>
 
                         <!-- Divider -->

@@ -54,7 +54,7 @@
                             <form:form action="/student/exam/submit" method="post">
                                 <c:forEach var="question" items="${questions}">
                                     <div class="card mb-3">
-                                        <div class="card-body">
+                                        <div class="card-body question-card">
                                             <h5 class="card-title">Question ${question.id}. ${question.questionDesc}</h5>
                                             <div>
                                                 <div class="form-check">
@@ -77,13 +77,15 @@
                                                             id="answer[${question.id}]Option4" value="D" required>
                                                     <label class="form-check-label" for="answer[${question.id}]Option4">${question.option4}</label>
                                                 </div>
+                                                <input class="form-check-input" type="radio" name="${question.id}" style="display: none"
+                                                            id="answer[${question.id}]Option5" value="E">
                                             </div>
                                         </div>
                                     </div>
                                 </c:forEach>
 
                                 <!-- Submit Button -->
-                                <button type="submit" class="btn btn-primary w-100">Submit Exam</button>
+                                <button id="submit-form" type="submit" class="btn btn-primary w-100">Submit Exam</button>
                             </form:form>
                         </div>
 
@@ -91,7 +93,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6>Time Left : <span id="time-left" class="text-danger">${exam.duration}:00</span></h6>
+                                    <h5>Time Left : <span id="time-left" class="text-danger"></span></h5>
                                     <ul class="list-unstyled mt-3">
                                         <li><strong>Name:</strong> ${sessionScope.userName}</li>
                                         <li><strong>Exam Name:</strong> ${exam.title}</li>
@@ -99,7 +101,7 @@
                                         <li><strong>Total Marks:</strong> 40</li>
                                         <li><strong>Mark for Correct:</strong> +${exam.markRight}</li>
                                         <li><strong>Mark for Wrong:</strong> -${exam.markWrong}</li>
-                                        <li><strong>Exam Duration:</strong><span id="exam-duration" value={${exam.duration}}>${exam.duration}</span> Minutes</li>
+                                        <li><strong>Exam Duration:</strong><span id="exam-duration" value=${exam.duration}>${exam.duration}</span> Minutes</li>
                                     </ul>
                                 </div>
                             </div>
@@ -139,30 +141,53 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-    <!-- <script>
+    <script>
         const timeExam = document.getElementById('exam-duration');
-        console.log(timeExam.getAttribute("value"));
-        let durationTime = 10;
-        console.log(durationTime);
+        let durationTime = Number(timeExam.getAttribute("value"))*60;
         const time_left = document.getElementById('time-left');
+
         const solutionTime = (time) => {
-             const minutes = Math.floor(time / 60);
-             const seconds = time % 60;
-             return {minutes: minutes < 10 ? `0${minutes}` : `${minutes}`, seconds: seconds < 10 ? `0${seconds}` : `${seconds}`};
-        }
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+
+            // Trả về đối tượng chứa phút và giây
+            return {
+                minutes,
+                seconds
+            };
+        };
+
+        console.log(solutionTime(durationTime));
+
         setInterval(()=>{
             if (durationTime <= 0) {
                 time_left.textContent = "00:00";
+
+                // Gán đáp án mặc định "E" cho các câu hỏi chưa trả lời
+                const questions = document.querySelectorAll('.card-body.question-card');
+                questions.forEach(question => {
+                    const radios = question.querySelectorAll('input[type="radio"]:not([value="E"])'); // Lấy các input trừ "E"
+                    const isAnswered = Array.from(radios).some(radio => radio.checked); // Kiểm tra nếu có radio được chọn
+
+                    if (!isAnswered) {
+                        // Nếu chưa chọn, gán "E"
+                        const defaultInput = question.querySelector('input[value="E"]');
+                        defaultInput.click();
+                    }
+                });
+
                 document.getElementById('submit-form').click();
                 clearInterval(timer);
             } else {
-            durationTime--;
-            console.log(durationTime);
-            const { minutes, seconds } = solutionTime(durationTime);
-            time_left.textContent = `${minutes}:${seconds}`;
+                durationTime--;
+                const { minutes, seconds } = solutionTime(durationTime);
+                console.log(minutes, seconds);
+                time_left.innerText = minutes + ':' + seconds;
             }
         }, 1000)
-     </script> -->
+
+
+     </script>
 </body>
 
 </html>

@@ -18,6 +18,8 @@ import com.hothai.examsystem.domain.entity.User;
 import com.hothai.examsystem.service.UploadService;
 import com.hothai.examsystem.service.UserService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
@@ -56,19 +58,18 @@ public class UserController {
     }
 
     @PostMapping("/teacher/user/update")
-    public String postUpdateUser(Model model, @ModelAttribute("user") @Valid User dataForm,
-            BindingResult userBindingResult, @RequestParam("nameAvatarFile") MultipartFile file) {
-
-        if (userBindingResult.hasErrors()) {
-            return "/teacher/user/update";
-        }
+    public String postUpdateUser(Model model, @ModelAttribute("user") User dataForm,
+                                @RequestParam("nameAvatarFile") MultipartFile file) {
 
         User currentUser = this.userService.getUserById(dataForm.getId());
         if (currentUser != null) {
             currentUser.setUsername(dataForm.getUsername());
             currentUser.setPhone(dataForm.getPhone());
-            currentUser.setRole(this.userService.getRoleByName(dataForm.getRole().getName()));
-            currentUser.setAvatar(this.uploadService.handleSaveUploadFile(file, "avatar"));
+            if(file == null || file.isEmpty()) {
+                currentUser.setAvatar(currentUser.getAvatar());
+            } else {
+                currentUser.setAvatar(this.uploadService.handleSaveUploadFile(file, "avatar"));
+            }
             this.userService.handleSaveUser(currentUser);
         }
         return "redirect:/teacher/user";
@@ -110,4 +111,35 @@ public class UserController {
         model.addAttribute("user", user);
         return "teacher/user/delete";
     }
+
+    @GetMapping("/teacher/profile")
+    public String getStudentProfilePage(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        int teacherId = (int) session.getAttribute("id");
+        User user = this.userService.getUserById(teacherId);
+        model.addAttribute("user", user);
+        return "teacher/profile/show";
+    }
+
+    @PostMapping("/teacher/profile")
+    public String postStudentProfilePage(Model model, @ModelAttribute("user") User dataForm,
+                                        @RequestParam("uploadAvatar") MultipartFile file, HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+        int id = (int) session.getAttribute("id");
+
+        User currentUser = this.userService.getUserById(id);
+        if (currentUser != null) {
+            currentUser.setUsername(dataForm.getUsername());
+            currentUser.setPhone(dataForm.getPhone());
+            if(file == null || file.isEmpty()) {
+                currentUser.setAvatar(currentUser.getAvatar());
+            } else {
+                currentUser.setAvatar(this.uploadService.handleSaveUploadFile(file, "avatar"));
+            }
+            this.userService.handleSaveUser(currentUser);
+        }
+        return "redirect:/teacher/profile";
+    }
+
 }

@@ -88,6 +88,6 @@ public class ExamWindowController {
         result.setTotalMark(totalMark[0]);
         this.resultService.saveResult(result);
 
-        return "redirect:/student/exam";
+        return "redirect:/student/class";
     }
 }

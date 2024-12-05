@@ -59,16 +59,10 @@
                                 </div>
                             </div>
                             <div class="col-md-7">
-                                <form:form action="/teacher/user/update" method="post" enctype="multipart/form-data" modelAttribute="user">
+                                <form:form action="/student/profile" method="post" enctype="multipart/form-data" modelAttribute="user">
                                     <div class="p-3 py-5">
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <h4 class="text-right">Profile Settings</h4>
-                                        </div>
-                                        <div class="row mt-2">
-                                            <div class="col-md-12">
-                                                <label class="labels">ID</label>
-                                                <input type="text" class="form-control" name="id" value="${user.id}">
-                                            </div>
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-md-12">
@@ -89,7 +83,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-12">
                                                 <label class="labels">Avatar</label>
-                                                <input class="form-control" type="file" id="avatarFile" accept=".jpg, .png, .jpeg" name="nameAvatarFile" value="${user.avatar}">
+                                                <input class="form-control" type="file" id="avatarFile" accept=".jpg, .png, .jpeg" name="uploadAvatar" value="${user.avatar}">
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="mb-3 d-flex justify-content-around">
@@ -99,14 +93,13 @@
                                         </div>
                                         <div class="mt-5 d-flex justify-content-between">
                                             <button class="btn btn-info profile-button" type="submit">Save Profile</button>
-                                            <a href="/teacher/user" class="btn btn-primary">Back</a>
+                                            <a href="/student" class="btn btn-primary">Back</a>
                                         </div>
                                     </div>
                                 </form:form>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 

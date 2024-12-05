@@ -1,5 +1,7 @@
 package com.hothai.examsystem.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.hothai.examsystem.domain.entity.Answer;
@@ -16,5 +18,9 @@ public class AnswerService {
 
     public void saveAnswer(Answer submitAnswer) {
         this.answerRepository.save(submitAnswer);
+    }
+
+    public List<Answer> getByExamAndUser(int examId, int userId) {
+        return this.answerRepository.findByExamIdAndUserId(examId, userId);
     }
 }
