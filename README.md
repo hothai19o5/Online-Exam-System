@@ -14,7 +14,7 @@ This project was developed as part of the learning process for Java Spring MVC. 
   <img src="https://github.com/user-attachments/assets/4860292d-3673-46d6-a2cd-a404b3df0a88" alt="Dashboard" width="45%">
   <img src="https://github.com/user-attachments/assets/7235c4b0-396c-4763-b108-255e0860b2ac" alt="Result" width="45%">
   <img src="https://github.com/user-attachments/assets/e2da1fd5-87eb-40cb-a5ca-1b2985c6b16d" alt="Classes" width="45%">
-  <img src="https://github.com/user-attachments/assets/54217fe0-8dec-435b-b960-d5fc89a176b0" alt="Exams width="45%">
+  <img src="https://github.com/user-attachments/assets/54217fe0-8dec-435b-b960-d5fc89a176b0" alt="Exams" width="45%">
   <img src="https://github.com/user-attachments/assets/927ec535-4ea3-44e6-b900-52e1fee3d5d4" alt="Detail Exam" width="45%">
   <img src="https://github.com/user-attachments/assets/35b1d9ca-31e8-4546-869a-f2e10f9eabb4" alt="Profile" width="45%">
 </p>
