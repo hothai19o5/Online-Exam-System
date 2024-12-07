@@ -1,9 +1,10 @@
 package com.hothai.examsystem.controller.student;
 
+import java.util.Set;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hothai.examsystem.domain.dto.RegisterDTO;
+import com.hothai.examsystem.domain.entity.Result;
 import com.hothai.examsystem.domain.entity.User;
+import com.hothai.examsystem.domain.entity.UserBatch;
 import com.hothai.examsystem.service.UploadService;
 import com.hothai.examsystem.service.UserService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 
 @Controller
 public class StudentDashboardController {
@@ -26,14 +28,23 @@ public class StudentDashboardController {
     private final PasswordEncoder passwordEncoder;
     private final UploadService uploadService;
 
-    public StudentDashboardController(UserService userService, PasswordEncoder passwordEncoder, UploadService uploadService) {
+    public StudentDashboardController(UserService userService, PasswordEncoder passwordEncoder,
+                                        UploadService uploadService) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.uploadService = uploadService;
     }
 
     @GetMapping("/student")
-    public String getStudentDashboardPage(Model model) {
+    public String getStudentDashboardPage(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        int userId = (int) session.getAttribute("id");
+        User user = this.userService.getUserById(userId);
+        model.addAttribute("user", user);
+        Set<Result> results = user.getResults();
+        model.addAttribute("results", results.size());
+        Set<UserBatch> userBatches = user.getUserBatches();
+        model.addAttribute("classes", userBatches.size());
         return "student/dashboard";
     }
 

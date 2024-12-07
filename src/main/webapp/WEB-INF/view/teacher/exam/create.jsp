@@ -48,13 +48,6 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Exams</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
                     <div class="mt-5">
                         <div class="row">
                             <div class="col-md-6 col-12 mx-auto">
@@ -122,7 +115,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 mb-3 d-flex justify-content-between">
-                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <button type="submit" class="btn btn-info">Create</button>
                                         <a href="/teacher/exam" class="btn btn-primary">Back</a>
                                     </div>
                                 </form:form>

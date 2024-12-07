@@ -23,22 +23,12 @@
     </li>
 
     <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
-
-    <!-- Nav Item - Exams -->
-    <!-- <li class="nav-item active">
-        <a class="nav-link" href="/student/exam">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Exams</span></a>
-    </li> -->
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Result -->
     <li class="nav-item active">
         <a class="nav-link" href="/student/result">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-clipboard-list"></i>
             <span>Results</span></a>
     </li>
 
@@ -48,7 +38,7 @@
     <!-- Nav Item - Result -->
     <li class="nav-item active">
         <a class="nav-link" href="/student/class">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-landmark"></i>
             <span>Class</span></a>
     </li>
 
@@ -58,7 +48,7 @@
     <!-- Nav Item - Notices -->
     <li class="nav-item active">
         <a class="nav-link" href="/student/notice">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-comments"></i>
             <span>Notices</span></a>
     </li>
 

@@ -50,9 +50,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Classes</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800"></h1>
                     </div>
 
                     <div class="mt-5">
@@ -78,7 +76,7 @@
                                         ${errorScholastic}
                                     </div>
                                     <div class="col-12 mb-3 d-flex justify-content-between">
-                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <button type="submit" class="btn btn-info">Create</button>
                                         <a href="/teacher/batch" class="btn btn-primary">Back</a>
                                     </div>
                                 </form:form>

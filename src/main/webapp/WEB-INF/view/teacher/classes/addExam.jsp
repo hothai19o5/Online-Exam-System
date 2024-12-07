@@ -52,14 +52,14 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Exam In To Class</h1>
+                        <h1 class="h3 mb-0 text-gray-800"></h1>
                         <a href="/teacher/batch" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Back</a>
+                            <i class="fas fa-backward fa-sm text-white-100"></i> Back</a>
                     </div>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Available Exams</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">List Of Exams</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

@@ -28,7 +28,7 @@
     <!-- Nav Item - Students -->
     <li class="nav-item active">
         <a class="nav-link" href="/teacher/user">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-users"></i>
             <span>Students</span></a>
     </li>
 
@@ -38,7 +38,7 @@
     <!-- Nav Item - Exams -->
     <li class="nav-item active">
         <a class="nav-link" href="/teacher/exam">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-newspaper"></i>
             <span>Exams</span></a>
     </li>
 
@@ -48,7 +48,7 @@
     <!-- Nav Item - Questions -->
     <li class="nav-item active">
         <a class="nav-link" href="/teacher/question">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-question"></i>
             <span>Questions</span></a>
     </li>
 
@@ -58,7 +58,7 @@
     <!-- Nav Item - Results -->
     <li class="nav-item active">
         <a class="nav-link" href="/teacher/result">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-clipboard-list"></i>
             <span>Results</span></a>
     </li>
 
@@ -68,7 +68,7 @@
     <!-- Nav Item - Results -->
     <li class="nav-item active">
         <a class="nav-link" href="/teacher/batch">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-landmark"></i>
             <span>Classes</span></a>
     </li>
 

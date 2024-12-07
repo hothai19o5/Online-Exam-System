@@ -48,41 +48,48 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Student Infomation</h1>
-                        <a href="/teacher/user" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
-                            <i class="text-white-50"></i> Back</a>
-                    </div>
-
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Student Infomation</h6>
-                        </div>
-                        <div class="card-body">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Full Name:</th>
-                                        <td>${user.username}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Email:</th>
-                                        <td>${user.email}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Phone:</th>
-                                        <td>${user.phone}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Avatar:</th>
-                                        <td>
-                                            <img style="max-height: 500px; max-width: 100%; object-fit: contain;"
-                                                src="/img/avatar/${user.avatar}" alt="image avatar">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="container rounded bg-white mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-md-5 border-right">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                    <img class="rounded-circle mt-5" width="150px" src="/img/avatar/${user.avatar}">
+                                    <span class="font-weight-bold">${user.username}</span>
+                                    <span class="text-black-50">${user.email}</span>
+                                    <span> </span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="p-3 py-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="text-right">Profile Student</h4>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12">
+                                            <label class="labels">ID</label>
+                                            <input type="text" class="form-control" name="id" value="${user.id}" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12">
+                                            <label class="labels">Name</label>
+                                            <input type="text" class="form-control" name="username" value="${user.username}" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            <label class="labels">Mobile Number</label>
+                                            <input type="text" class="form-control" name="phone" value="${user.phone}" disabled>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="labels">Email</label>
+                                            <input type="email" class="form-control" name="email" value="${user.email}" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a href="/teacher/user" class="btn btn-info">Back</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -52,14 +52,14 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Exams</h1>
-                        <a href="/teacher/exam/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Add New Exam</a>
+                        <h1 class="h3 mb-0 text-gray-800"></h1>
+                        <a href="/teacher/exam/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-plus fa-sm text-white-100"></i> Add New Exam</a>
                     </div>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">List Of Exams</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -100,7 +100,7 @@
                                                 <td>${exam.markRight}</td>
                                                 <td>
                                                     <a href="/teacher/exam/${exam.id}" class="btn btn-info">Detail</a>
-                                                    <a href="/teacher/exam/update/${exam.id}" class="btn btn-primary">Add Question</a>
+                                                    <a href="/teacher/exam/update/${exam.id}" class="btn btn-primary">Add</a>
                                                     <a href="/teacher/exam/delete/${exam.id}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>

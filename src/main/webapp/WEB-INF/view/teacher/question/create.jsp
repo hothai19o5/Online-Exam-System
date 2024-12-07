@@ -48,13 +48,6 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Questions</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
                     <div class="mt-5">
                         <div class="row">
                             <div class="col-md-6 col-12 mx-auto">
@@ -113,27 +106,18 @@
                                         <c:set var="errorAnswer">
                                             <form:errors path="answer" cssClass="invalid-feedback" />
                                         </c:set>
-                                        <label class="form-label">Answer:</label>
-                                        <div>
-                                            <form:radiobutton path="answer" value="A" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
-                                            <label>A</label>
-                                        </div>
-                                        <div>
-                                            <form:radiobutton path="answer" value="B" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
-                                            <label>B</label>
-                                        </div>
-                                        <div>
-                                            <form:radiobutton path="answer" value="C" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
-                                            <label>C</label>
-                                        </div>
-                                        <div>
-                                            <form:radiobutton path="answer" value="D" class="${not empty errorAnswer ? 'is-invalid' : ''}" />
-                                            <label>D</label>
-                                        </div>
+                                        <label for="answerSelect" class="form-label">Answer:</label>
+                                        <form:select path="answer" id="answerSelect" class="form-select ${not empty errorAnswer ? 'is-invalid' : ''}">
+                                            <option value="" disabled selected>Select your answer</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                        </form:select>
                                         ${errorAnswer}
                                     </div>
                                     <div class="col-12 mb-3 d-flex justify-content-between">
-                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <button type="submit" class="btn btn-info">Create</button>
                                         <a href="/teacher/question" class="btn btn-primary">Back</a>
                                     </div>
                                 </form:form>
